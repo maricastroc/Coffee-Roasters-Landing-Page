@@ -1,0 +1,297 @@
+.main-content-home {
+    padding: 0rem 9rem;
+}
+
+.great-coffee {
+    color: white;
+    margin-top: 4rem;
+    border: transparent;
+    background: url(../assets/home/desktop/image-hero-coffeepress.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 1.5rem;
+}
+
+.great-coffee-text {
+    padding: 7rem 7rem;
+
+    h2 {
+        width: clamp(6ch, 60%, 8em);
+        font-size: clamp(1rem, 4vw, 4rem);
+        font-family: "Fraunces", serif;
+    }
+
+    p {
+        margin-top: 2.5rem;
+        width: 60%;
+        line-height: 1.8rem;
+        font-size: 1.3rem;
+        font-family: "Barlow", sans-serif;
+    }
+
+    button {
+        @extend .btn;
+        margin: 6rem 0 0 0;
+        padding: 1.2rem 2.7rem;
+
+        &:hover {
+            background-color: $medium-blue;
+            transform: scale(120%);
+        }
+    }
+}
+
+.collection {
+    position: relative;
+
+    margin-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        position: relative;
+        color: #848990;
+        font-family: "Fraunces", serif;
+        font-size: clamp(2rem, 10.2vw, 11rem);
+        font-weight: 900;
+        letter-spacing: 6px;
+        margin-bottom: -4.5rem;
+    }
+}
+
+.title-gradient {
+    background: linear-gradient(
+        0deg,
+        rgba(254, 252, 247, 0.8044818269) 50%,
+        rgba(254, 247, 247, 0) 100%
+    );
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: -16rem;
+    z-index: 9;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+
+    z-index: 9;
+}
+
+.product-image img {
+    width: 19rem;
+}
+
+.product-description {
+    max-width: 100%;
+    color: $medium-navy-blue;
+    margin: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+
+    h3 {
+        font-family: "Fraunces", serif;
+        font-size: 1.9rem;
+    }
+    p {
+        letter-spacing: 0.5px;
+        line-height: 1.5rem;
+        font-size: clamp(0.8rem, 1.1vw, 1rem);
+        font-family: "Barlow", sans-serif;
+    }
+}
+
+.choose-us {
+    margin-top: 7.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.choose-us-text {
+    position: relative;
+    background-color: #293039;
+    border-radius: 1rem;
+    color: white;
+    text-align: center;
+    padding: 4rem 23rem 19rem 23rem;
+
+    h2 {
+        font-family: "Fraunces", serif;
+        font-size: 2.1rem;
+    }
+
+    p {
+        margin-top: 2rem;
+        font-size: 1.3rem;
+        font-family: "Barlow", sans-serif;
+        text-align: center;
+        line-height: 1.9rem;
+    }
+}
+
+.choose-us-benefits {
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.benefit {
+    position: relative;
+    height: 25.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -12rem;
+    padding: 0rem 2rem;
+    width: 19rem;
+    color: white;
+    background-color: $dark-blue;
+    border-radius: 1rem;
+
+    img {
+        width: 6rem;
+        margin-top: 4rem;
+    }
+}
+
+.benefit-text {
+    position: absolute;
+    display: block;
+    text-align: center;
+    margin: 10rem 2rem auto 2rem;
+
+    h3 {
+        margin-top: 4.5rem;
+        font-family: "Fraunces", serif;
+        font-size: 1.5rem;
+    }
+
+    p {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-family: "Barlow", sans-serif;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+.how-it-works {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24rem;
+
+    h2 {
+        font-family: "Fraunces", serif;
+        font-size: 2.6rem;
+        color: $medium-gray;
+    }
+}
+
+.steps-illustration {
+    position: relative;
+    display: block;
+    height: 1.5rem;
+    width: 70%;
+    margin-top: 10rem;
+}
+
+.circle1,
+.circle2,
+.circle3 {
+    transform-origin: 50% 50%;
+    position: absolute;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: white;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: $dark-blue;
+}
+
+.circle1 {
+    left: 0;
+}
+
+.circle2 {
+    left: 53%;
+}
+
+.circle3 {
+    left: 100%;
+}
+
+.behind-line {
+    position: absolute;
+    top: 50%;
+
+    z-index: -1;
+    width: 100%;
+    height: 3px;
+    background-color: $beige-color;
+}
+
+.steps {
+    margin-top: 6rem;
+    margin-left: 1rem;
+    display: flex;
+}
+
+.step1,
+.step2,
+.step3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.step-number {
+    color: $beige-color;
+    font-family: "Fraunces", serif;
+    font-size: 5rem;
+    font-weight: bolder;
+}
+
+.step-title {
+    margin-top: 2rem;
+    color: #293039;
+    font-family: "Fraunces", serif;
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+.step-description {
+    width: 85%;
+    margin-top: 2rem;
+    color: #293039;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.create-plan-btn {
+    a {
+        color: white;
+    }
+
+    button {
+        @extend .btn;
+        margin: 10rem 0;
+        padding: 1.2rem 3rem;
+
+        &:hover {
+            background-color: $medium-blue;
+            transform: scale(120%);
+        }
+    }
+}

@@ -1,0 +1,527 @@
+a {
+    text-decoration: none;
+}
+
+.main-content-create {
+    padding: 0rem 9rem;
+}
+
+.create-plan {
+    color: white;
+    margin-top: 4rem;
+    border: transparent;
+    background: url(../assets/plan/desktop/image-hero-blackcup.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 1.5rem;
+}
+
+.create-plan-text {
+    padding: 6rem 4.5rem 11.5rem 5rem;
+}
+
+.create-plan-text h2 {
+    font-family: "Fraunces", sans-serif;
+    font-size: clamp(3.5rem, 4vw, 4.5rem);
+    font-weight: 900;
+    width: 50%;
+}
+
+.create-plan-text p {
+    font-family: "Barlow", sans-serif;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    width: 44%;
+    line-height: 2rem;
+}
+
+.all-steps {
+    background-image: url(../assets/plan/desktop/bg-steps.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rem;
+    z-index: -9;
+}
+
+.all-steps p {
+    font-family: "Fraunces", serif;
+    font-size: 2.6rem;
+}
+
+.steps-illustration-create {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    width: 58%;
+    margin: 9rem 0 0 8rem;
+}
+
+.circle1-create,
+.circle2-create,
+.circle3-create {
+    background-color: transparent;
+    border: solid 3px $dark-blue;
+    border-radius: 50%;
+    transform-origin: 50% 50%;
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.circle1-create {
+    left: 0;
+}
+
+.circle2-create {
+    left: 53%;
+}
+
+.circle3-create {
+    left: 100%;
+}
+
+.behind-line-create {
+    transform-origin: 50% 50%;
+    background-color: $beige-color;
+    position: absolute;
+    margin: 50% 0 50% 2.7%;
+    width: 100%;
+    height: 3px;
+    z-index: -1;
+}
+
+.steps-create {
+    width: 90%;
+    display: flex;
+    gap: 6rem;
+    padding: 3rem 3rem 11rem 8rem;
+}
+
+.step1-create,
+.step2-create,
+.step3-create {
+    display: flex;
+    flex-direction: column;
+}
+
+.step-number-create {
+    color: $beige-color;
+    font-family: "Fraunces", serif;
+    font-size: 5rem;
+    font-weight: bolder;
+}
+
+.step-title-create {
+    font-family: "Fraunces", serif;
+    font-size: 2.4rem;
+    font-weight: bolder;
+    margin-top: 1rem;
+    color: white;
+}
+
+.step-description-create {
+    font-family: "Barlow", sans-serif;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    color: white;
+    margin-top: 2rem;
+}
+
+.choices-container {
+    display: flex;
+}
+
+.questions-map-container {
+    position: sticky;
+    top: 100px;
+    user-select: none;
+    display: flex;
+    width: clamp(300px, 2vw, 500px);
+    flex-direction: column;
+    margin: 15rem 0 0 0;
+}
+
+.question-map {
+    cursor: pointer;
+    display: flex;
+    margin: 1.5rem 0;
+    transition: transform 700ms cubic-bezier(0.4, 0, 1, 1);
+
+    h2 {
+        color: #cdcecd;
+        font-family: "Fraunces", serif;
+        font-size: 1.9rem;
+    }
+
+    h3 {
+        color: $light-gray;
+        font-family: "Fraunces", serif;
+        font-size: 1.9rem;
+        margin-left: 1em;
+        transition: 0.4s;
+    }
+
+    &:hover {
+        transform: translateX(0.5em);
+        transition: transform 200ms ease-in-out;
+        h2 {
+            color: $light-gray;
+        }
+        h3 {
+            color: $medium-gray;
+        }
+    }
+}
+
+.question-map-active {
+    color: $medium-navy-blue;
+}
+
+.question-map-disabled {
+    h2 {
+        color: $medium-white;
+    }
+    h3 {
+        color: $dark-white;
+    }
+}
+
+.question-map-checked:hover h2 {
+    color: $light-blue;
+}
+
+.separator {
+    height: 2px;
+    background-color: #adb0b241;
+}
+
+.questions-section {
+    display: flex;
+    max-width: 80%;
+}
+
+.options {
+    position: relative;
+    gap: 2rem;
+    top: -26rem;
+    margin: 0 0 0 auto;
+    width: clamp(20em, 70%, 50em);
+}
+
+.choice {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.choice-disabled {
+    cursor: default;
+
+    h1 {
+        color: #cdcecd;
+    }
+
+    img {
+        transform: none;
+        cursor: default;
+        transition: 1ms transform;
+        filter: invert(70%) sepia(30%) saturate(120%)
+            hue-rotate(165deg) brightness(130%)
+            contrast(89%);
+    }
+}
+
+.question {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-bottom: 3rem;
+
+    h1 {
+        flex: 3;
+        color: $medium-gray;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 2.1rem;
+        margin-right: 1rem;
+    }
+}
+
+.question-disabled h1 {
+    color: #cdcecd;
+}
+
+.arrow-wrap img {
+    margin: auto;
+    display: block;
+    scale: 1.5;
+    height: 20px;
+    fill: $dark-blue;
+    transition: 200ms transform;
+
+    &:hover {
+        filter: invert(70%) sepia(30%) saturate(120%)
+            hue-rotate(165deg) brightness(130%)
+            contrast(89%);
+    }
+}
+
+.arrow-wrap-selected img {
+    transform: rotate(180deg);
+    transition: 1ms transform;
+    filter: invert(70%) sepia(30%) saturate(120%)
+        hue-rotate(165deg) brightness(130%) contrast(89%);
+}
+
+.arrow-wrap-disabled img {
+    transform: none;
+    transition: none;
+    filter: invert(70%) sepia(30%) saturate(120%)
+        hue-rotate(165deg) brightness(130%) contrast(89%);
+}
+
+.answers {
+    max-height: 0;
+    overflow: hidden;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    transition: max-height 500ms;
+    user-select: none;
+    display: flex;
+    color: #86c2c1;
+}
+
+.answers-open {
+    max-height: 50rem;
+}
+
+.answers-closed {
+    max-height: 0;
+    img {
+        transform: none;
+    }
+}
+
+.answer {
+    cursor: pointer;
+    color: $medium-navy-blue;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 23rem;
+    width: clamp(8rem, 100%, 50rem);
+    background-color: $light-white;
+    padding: 3rem 0rem 6rem 0rem;
+    transition: 100ms background;
+    border-radius: 1rem;
+
+    h1 {
+        position: absolute;
+        margin: 0rem 1.5rem 0rem 1.5rem;
+        font-family: "Fraunces", serif;
+
+        font-size: 2rem;
+    }
+
+    p {
+        overflow: auto;
+        display: block;
+        position: absolute;
+        margin: 6rem 1.5rem 2rem 1.5rem;
+
+        align-items: start;
+        line-height: 1.5;
+        font-family: "Barlow", sans-serif;
+        font-size: 1.3rem;
+    }
+
+    &:hover {
+        background-color: $beige-color;
+        color: black;
+    }
+}
+
+.answer-active {
+    color: white;
+    background-color: $dark-blue;
+
+    &:hover {
+        color: white;
+        background-color: $dark-blue;
+    }
+}
+
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.summary {
+    background-color: #293039;
+    border-radius: 1rem;
+    padding: 3rem 2rem 2rem 2rem;
+
+    h3 {
+        color: #848990;
+        font-family: "Barlow", sans-serif;
+        font-weight: 500;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-family: "Fraunces", serif;
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: white;
+        line-height: 1.6;
+    }
+}
+
+.custom {
+    color: $dark-blue;
+    line-height: 1.6;
+}
+
+.finish-order {
+    margin-top: 3.5rem;
+    color: white;
+    background-color: $dark-blue;
+    padding: 1.2rem 3rem;
+    font-size: 1.3rem;
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    border: transparent;
+    border-radius: 0.7rem;
+    margin-bottom: 10rem;
+    cursor: pointer;
+    transition: 0.7s;
+
+    &:hover {
+        background-color: $medium-blue;
+        transform: scale(110%);
+    }
+}
+
+.finish-order-disabled {
+    background-color: #e2dedb;
+    color: white;
+    cursor: default;
+
+    &:hover {
+        background-color: #e2dedb;
+        color: white;
+        cursor: default;
+        transform: scale(100%);
+    }
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+    user-select: none;
+    transition: opacity 0.3s;
+}
+
+.modal {
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    width: clamp(100px, 80%, 500px);
+    border-radius: 0.8em;
+    background-color: #fefcf7;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 50%);
+    transition: opacity 0.4s;
+    border-radius: 1rem;
+
+    p {
+        margin: 0 2rem;
+        color: #848990;
+        font-family: "Barlow", sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: start;
+    }
+}
+
+.modal-title {
+    background-color: $medium-navy-blue;
+    border-radius: 1rem 1rem 0 0;
+
+    h1 {
+        color: white;
+        font-size: 2.5rem;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        text-align: center;
+        padding: 1.5rem 0;
+    }
+}
+
+.modal-order {
+    font-family: "Fraunces", sans-serif;
+    color: $medium-gray;
+    line-height: 1.6;
+    padding: 2rem 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.hidden {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.modal-checkout {
+    display: flex;
+    gap: 2.8rem;
+    max-width: 100%;
+    margin-top: 4.5rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        color: $medium-navy-blue;
+        font-size: 2.3rem;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+    }
+
+    button {
+        color: white;
+        background-color: $dark-blue;
+        padding: 1.1rem 2.4rem;
+        font-size: 1.3rem;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        border: transparent;
+        border-radius: 0.7rem;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+            background-color: $medium-blue;
+            transform: scale(110%);
+        }
+    }
+}
