@@ -548,7 +548,6 @@ a {
   font-family: "Fraunces", serif;
   font-size: 1.9rem;
   margin-left: 1em;
-  transition: 0.4s;
 }
 .question-map:hover {
   transform: translateX(0.5em);
@@ -572,8 +571,18 @@ a {
   color: #d5d5d4;
 }
 
+.question-map-checked h2 {
+  color: #9ecdc9;
+}
 .question-map-checked:hover h2 {
   color: #9ecdc9;
+}
+
+.question-map-onclick h3 {
+  color: #000000;
+}
+.question-map-onclick h3:hover {
+  color: #000000;
 }
 
 .separator {

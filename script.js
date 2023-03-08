@@ -168,6 +168,12 @@ for (let i = 0; i < choice.length; i++) {
             }
         );
         qMap[i].addEventListener("click", () => {
+            qMap[i].classList.add("question-map-onclick");
+            setTimeout(() => {
+                qMap[i].classList.remove(
+                    "question-map-onclick"
+                );
+            }, 1500);
             choice[i].children[0].classList.add(
                 "arrow-wrap-selected"
             );

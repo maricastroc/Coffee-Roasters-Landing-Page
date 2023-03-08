@@ -164,7 +164,6 @@ a {
         font-family: "Fraunces", serif;
         font-size: 1.9rem;
         margin-left: 1em;
-        transition: 0.4s;
     }
 
     &:hover {
@@ -192,8 +191,24 @@ a {
     }
 }
 
-.question-map-checked:hover h2 {
-    color: $light-blue;
+.question-map-checked {
+    h2 {
+        color: $light-blue;
+    }
+    &:hover {
+        h2 {
+            color: $light-blue;
+        }
+    }
+}
+
+.question-map-onclick {
+    h3 {
+        color: $black-color;
+        &:hover {
+            color: $black-color;
+        }
+    }
 }
 
 .separator {
