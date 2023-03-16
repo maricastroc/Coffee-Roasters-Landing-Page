@@ -17,16 +17,52 @@
         <div class="container">
             <section class="header">
                 <div class="navbar">
-                    <img
-                        src="./assets/shared/desktop/logo.svg"
-                        alt=""
-                    />
-                    <div class="navbar-options">
-                        <a href="./home.html">HOME</a>
-                        <a href="">ABOUT US</a>
-                        <a href="./create-your-plan.html"
-                            >CREATE YOUR PLAN</a
+                    <div class="main-navbar">
+                        <img
+                            src="./assets/shared/desktop/logo.svg"
+                            alt=""
+                        />
+                        <div class="navbar-options">
+                            <a href="./home.html">HOME</a>
+                            <a href="./about-us.html"
+                                >ABOUT US</a
+                            >
+                            <a
+                                href="./create-your-plan.html"
+                                >CREATE YOUR PLAN</a
+                            >
+                        </div>
+                        <div
+                            class="hamburger"
+                            id="hamburger"
                         >
+                            <img
+                                id="hamburger-icon"
+                                src="./assets/shared/mobile/icon-hamburger.svg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+
+                    <div class="modal-menu hidden">
+                        <ul>
+                            <li>
+                                <a href="./home.html"
+                                    >Home</a
+                                >
+                            </li>
+                            <li>
+                                <a href="./about-us.html"
+                                    >About Us</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./create-your-plan.html"
+                                    >Create Your Plan</a
+                                >
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -105,9 +141,9 @@
                         <div class="country">
                             <div class="country-img">
                                 <img
-                                src="./assets/about/desktop/illustration-uk.svg"
-                                alt=""
-                            />
+                                    src="./assets/about/desktop/illustration-uk.svg"
+                                    alt=""
+                                />
                             </div>
                             <div class="country-text">
                                 <h3>United Kingdom</h3>
@@ -120,9 +156,9 @@
                         <div class="country">
                             <div class="country-img">
                                 <img
-                                src="./assets/about/desktop/illustration-canada.svg"
-                                alt=""
-                            />
+                                    src="./assets/about/desktop/illustration-canada.svg"
+                                    alt=""
+                                />
                             </div>
                             <div class="country-text">
                                 <h3>Canada</h3>
@@ -135,9 +171,9 @@
                         <div class="country">
                             <div class="country-img">
                                 <img
-                                src="./assets/about/desktop/illustration-australia.svg"
-                                alt=""
-                            />
+                                    src="./assets/about/desktop/illustration-australia.svg"
+                                    alt=""
+                                />
                             </div>
                             <div class="country-text">
                                 <h3>Australia</h3>
@@ -181,6 +217,6 @@
                 </div>
             </section>
         </div>
-        <script src="./script.js"></script>
+        <script src="./hamburger-menu.js"></script>
     </body>
 </html>

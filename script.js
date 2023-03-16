@@ -20,8 +20,8 @@ const plan = {
     frequency: [
         "Every week",
         "Every 2 weeks",
-        "Every month",
-    ],
+        "Every month"
+    ]
 };
 
 summary.children[1].innerHTML = initialSentence;
@@ -113,7 +113,7 @@ const checkDelivery = () => {
                     "answers-open"
                 );
                 choice[4].scrollIntoView({
-                    behavior: "smooth",
+                    behavior: "smooth"
                 });
             }
         );
@@ -125,7 +125,7 @@ const checkDelivery = () => {
                 "answers-open"
             );
             choice[4].scrollIntoView({
-                behavior: "smooth",
+                behavior: "smooth"
             });
         });
     }
@@ -155,7 +155,7 @@ for (let i = 0; i < choice.length; i++) {
                     )
                 ) {
                     choice[i].scrollIntoView({
-                        behavior: "smooth",
+                        behavior: "smooth"
                     });
                 }
                 if (
@@ -181,7 +181,7 @@ for (let i = 0; i < choice.length; i++) {
                 "answers-open"
             );
             choice[i].scrollIntoView({
-                behavior: "smooth",
+                behavior: "smooth"
             });
             if (
                 summary.children[1].innerHTML ===
@@ -480,3 +480,13 @@ const getOrder = () => {
             overlay.classList.add("hidden");
         });
 };
+
+let openMenu = false;
+
+document
+    .querySelector("#hamburger-icon")
+    .addEventListener("click", () => {
+        document
+            .querySelector(".modal-menu")
+            .classList.remove("hidden");
+    });

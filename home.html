@@ -14,21 +14,48 @@
         <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
-        <div class="container">
+
             <section class="header">
                 <div class="navbar">
-                    <img
+                    <div class="main-navbar">
+                        <img
                         src="./assets/shared/desktop/logo.svg"
                         alt=""
-                    />
-                    <div class="navbar-options">
-                        <a href="./home.html">HOME</a>
-                        <a href="./about-us.html"
-                            >ABOUT US</a
-                        >
-                        <a href="./create-your-plan.html"
-                            >CREATE YOUR PLAN</a
-                        >
+                        />
+                        <div class="navbar-options">
+                            <a href="./home.html">HOME</a>
+                            <a href="./about-us.html"
+                                >ABOUT US</a
+                            >
+                            <a href="./create-your-plan.html"
+                                >CREATE YOUR PLAN</a
+                            >
+                        </div>
+                        <div class="hamburger" id="hamburger">
+                            
+                            <img id="hamburger-icon" src="./assets/shared/mobile/icon-hamburger.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="modal-menu hidden">
+                        <ul>
+                            <li>
+                                <a href="./home.html"
+                                    >Home</a
+                                >
+                            </li>
+                            <li>
+                                <a href="./about-us.html"
+                                    >About Us</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./create-your-plan.html"
+                                    >Create Your Plan</a
+                                >
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -44,11 +71,14 @@
                             directly to your door, at your
                             schedule.
                         </p>
-                        <a href="./create-your-plan.html"
-                            ><button>
-                                Create your plan
-                            </button></a
-                        >
+                        <div class="great-coffee-btn">
+                            <a
+                                href="./create-your-plan.html"
+                                ><button>
+                                    Create your plan
+                                </button></a
+                            >
+                        </div>
                     </div>
                 </div>
                 <div class="collection">
@@ -302,5 +332,6 @@
                 </div>
             </section>
         </div>
+        <script src="./hamburger-menu.js"></script>
     </body>
 </html>

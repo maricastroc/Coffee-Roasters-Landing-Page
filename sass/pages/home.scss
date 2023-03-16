@@ -17,7 +17,7 @@
     padding: 7rem 7rem;
 
     h2 {
-        width: clamp(6ch, 60%, 8em);
+        width: clamp(6ch, 70%, 8em);
         font-size: clamp(1rem, 4vw, 4rem);
         font-family: "Fraunces", serif;
     }
@@ -108,15 +108,15 @@
 }
 
 .choose-us {
+    position: relative;
     margin-top: 7.5rem;
     justify-content: center;
     align-items: center;
+    background-color: #293039;
+    border-radius: 1rem;
 }
 
 .choose-us-text {
-    position: relative;
-    background-color: #293039;
-    border-radius: 1rem;
     color: white;
     text-align: center;
     padding: 4rem 23rem 19rem 23rem;
@@ -293,5 +293,192 @@
             background-color: $medium-blue;
             transform: scale(120%);
         }
+    }
+}
+
+@media (max-width: 1440px) {
+    .main-content-home {
+        padding: 0rem 3.5rem;
+    }
+
+    .great-coffee {
+        background-image: url(../../assets/home/tablet/image-hero-coffeepress.jpg);
+    }
+
+    .great-coffee-text {
+        padding: 5rem;
+
+        h2 {
+            width: clamp(8ch, 55%, 8em);
+            font-size: clamp(4rem, 6vw, 6rem);
+            line-height: 1.1;
+            width: 30rem;
+        }
+
+        p {
+            margin-top: 2.5rem;
+            width: 28rem;
+            line-height: 1.8rem;
+            font-size: 1.3rem;
+        }
+    }
+
+    .great-coffee-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .collection {
+        h1 {
+            font-size: clamp(11vw, 13.5vw, 11rem);
+            letter-spacing: 2px;
+            margin-bottom: -6rem;
+        }
+    }
+
+    .products {
+        flex-direction: column;
+        width: 70%;
+
+        .coffee {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6rem;
+        }
+    }
+
+    .product-description {
+        text-align: left;
+        gap: 1rem;
+        display: flex;
+        flex-wrap: nowrap;
+
+        h3 {
+            width: 15rem;
+            font-size: 1.8rem;
+        }
+
+        p {
+            width: 19rem;
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+        }
+    }
+
+    .product-image img {
+        width: 15rem;
+    }
+
+    .title-gradient {
+        max-width: 90vw;
+        margin-top: -4rem;
+        background: linear-gradient(
+            0deg,
+            rgba(254, 252, 247, 0.8044818269) 90%,
+            rgba(254, 247, 247, 0) 100%
+        );
+    }
+
+    .choose-us {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 5rem;
+    }
+
+    .choose-us-text {
+        color: white;
+        text-align: center;
+        padding: 4rem 0 7rem 0;
+        width: 30rem;
+    }
+
+    .choose-us-benefits {
+        position: relative;
+        transform: translate(0, 0);
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+        margin: 0 1rem;
+    }
+
+    .benefit {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 92%;
+        height: 13.5rem;
+        gap: 4rem;
+        margin: 0;
+
+        img {
+            width: 6rem;
+            margin-top: 0;
+        }
+    }
+
+    .benefit-text {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        margin: 0;
+        width: 60%;
+
+        h3 {
+            width: 20rem;
+            font-size: 1.9rem;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+    }
+
+    .how-it-works {
+        margin-top: 14rem;
+        justify-content: space-between;
+    }
+
+    .steps {
+        margin-left: 0;
+    }
+
+    .step-title {
+        width: 12rem;
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
+
+    .step-description {
+        margin-top: 1rem;
+        font-size: 1rem;
+        line-height: 1.6rem;
+        p {
+            width: 18rem;
+        }
+    }
+
+    .create-plan-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 710px) {
+    .great-coffee {
+        margin-top: 0;
+        background-image: url(../assets/home/mobile/image-hero-coffeepress.jpg);
     }
 }
