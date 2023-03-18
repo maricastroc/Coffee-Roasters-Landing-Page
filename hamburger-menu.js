@@ -8,7 +8,7 @@ document
                 .classList.remove("hidden");
 
             document.querySelector("#hamburger-icon").src =
-                "./assets/shared/mobile/icon-close.svg";
+                "../assets/shared/mobile/icon-close.svg";
 
             isOpen = true;
         } else {
@@ -16,7 +16,7 @@ document
                 .querySelector(".modal-menu")
                 .classList.add("hidden");
             document.querySelector("#hamburger-icon").src =
-                "./assets/shared/mobile/icon-hamburger.svg";
+                "../assets/shared/mobile/icon-hamburger.svg";
 
             isOpen = false;
         }
