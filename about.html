@@ -14,35 +14,37 @@
         <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
-        <div class="container">
-            <section class="header">
-                <div class="navbar">
-                    <div class="main-navbar">
-                        <img
-                            src="./assets/shared/desktop/logo.svg"
-                            alt=""
-                        />
-                        <div class="navbar-options">
-                            <a href="./home.html">HOME</a>
-                            <a href="./about-us.html"
-                                >ABOUT US</a
-                            >
-                            <a
-                                href="./create-your-plan.html"
-                                >CREATE YOUR PLAN</a
-                            >
-                        </div>
-                        <div
-                            class="hamburger"
-                            id="hamburger"
+        <nav>
+            <img
+                class="nav-logo"
+                src="./assets/shared/desktop/logo-header.svg"
+                alt="Coffeeroaster Logo"
+            />
+
+            <div id="navigation">
+                <ul>
+                    <li><a href="./home.html"
+                        >HOME</a
+                    ></li>
+                    <li>
+                        ABOUT US
+                    </li>
+                    <li>
+                        <a href="./create.html"
+                            >CREATE YOUR PLAN</a
                         >
-                            <img
-                                id="hamburger-icon"
-                                src="./assets/shared/mobile/icon-hamburger.svg"
-                                alt=""
-                            />
-                        </div>
-                    </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <img
+                    id="hamburger-icon"
+                    src="./assets/shared/mobile/icon-hamburger.svg"
+                    alt=""
+                />
+            </div>
+        </nav>
 
                     <div class="modal-menu hidden">
                         <ul>
@@ -52,21 +54,18 @@
                                 >
                             </li>
                             <li>
-                                <a href="./about-us.html"
+                                <a class="link-disabled"
                                     >About Us</a
                                 >
                             </li>
                             <li>
-                                <a
-                                    href="./create-your-plan.html"
+                                <a href="./create.html"
                                     >Create Your Plan</a
                                 >
                             </li>
                         </ul>
                     </div>
-                </div>
-            </section>
-            <section class="main-content-about-us">
+            <main class="main-about">
                 <div class="about-us">
                     <div class="about-us-text">
                         <h2>About us</h2>
@@ -185,38 +184,38 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </main>
 
-            <section class="footer">
-                <div class="footer-logo">
-                    <img
-                        src="./assets/logo-white.svg"
-                        alt=""
-                    />
-                </div>
-                <div class="footer-options">
-                    <a href="./home.html">HOME</a>
-                    <a href="">ABOUT US</a>
-                    <a href="./create-your-plan.html"
-                        >CREATE YOUR PLAN</a
-                    >
-                </div>
-                <div class="footer-icons">
+            <footer>
+                <img
+                    class="footer-logo"
+                    src="./assets/shared/desktop/logo-footer.svg"
+                    alt="Coffeeroaster Logo"
+                />
+                <ul>
+                    <li><a href="./home.html">HOME</a></li>
+                    <li>ABOUT US</li>
+                    <li>
+                        <a href="./create.html"
+                            >CREATE YOUR PLAN</a
+                        >
+                    </li>
+                </ul>
+                <div class="socials">
                     <img
                         src="./assets/shared/desktop/icon-facebook.svg"
-                        alt=""
-                    />
-                    <img
-                        src="./assets/shared/desktop/icon-instagram.svg"
-                        alt=""
+                        alt="Coffeeroaster Facebook"
                     />
                     <img
                         src="./assets/shared/desktop/icon-twitter.svg"
-                        alt=""
+                        alt="Coffeeroaster Twitter"
+                    />
+                    <img
+                        src="./assets/shared/desktop/icon-instagram.svg"
+                        alt="Coffeeroaster Instagram"
                     />
                 </div>
-            </section>
-        </div>
+            </footer>
         <script src="./hamburger-menu.js"></script>
     </body>
 </html>

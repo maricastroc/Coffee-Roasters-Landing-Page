@@ -1,7 +1,3 @@
-.main-content-home {
-    padding: 0rem 9rem;
-}
-
 .great-coffee {
     color: white;
     margin-top: 4rem;
@@ -52,7 +48,6 @@
     align-items: center;
 
     h1 {
-        position: relative;
         color: #848990;
         font-family: "Fraunces", serif;
         font-size: clamp(2rem, 10.2vw, 11rem);
@@ -297,7 +292,7 @@
 }
 
 @media (max-width: 1440px) {
-    .main-content-home {
+    .main-home {
         padding: 0rem 3.5rem;
     }
 
@@ -331,7 +326,7 @@
 
     .collection {
         h1 {
-            font-size: clamp(11vw, 13.5vw, 11rem);
+            font-size: clamp(11vw, 10vw, 11rem);
             letter-spacing: 2px;
             margin-bottom: -6rem;
         }
@@ -353,7 +348,6 @@
         text-align: left;
         gap: 1rem;
         display: flex;
-        flex-wrap: nowrap;
 
         h3 {
             width: 15rem;
@@ -476,9 +470,375 @@
     }
 }
 
-@media (max-width: 710px) {
+@media (max-width: 709px) {
+    .main-home {
+        padding: 0rem 2.2rem;
+    }
+
     .great-coffee {
-        margin-top: 0;
-        background-image: url(../assets/home/mobile/image-hero-coffeepress.jpg);
+        margin-top: -2rem;
+        background: url(../../assets/home/mobile/image-hero-coffeepress.jpg);
+        background-size: cover;
+        background-position: right top;
+        background-repeat: no-repeat;
+    }
+
+    .great-coffee-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            font-size: 3.2rem;
+            width: 25rem;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            width: 22rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+    }
+
+    .collection {
+        h1 {
+            font-size: 2.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .title-gradient {
+        width: 20rem;
+        background: linear-gradient(
+            0deg,
+            rgba(254, 252, 247, 0.8044818269) 50%,
+            rgba(254, 247, 247, 0) 100%
+        );
+        height: 10vw;
+        margin-top: -5rem;
+    }
+
+    .products {
+        margin-top: 3rem;
+
+        .coffee {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+        }
+    }
+
+    .product-description {
+        text-align: center;
+        gap: 2rem;
+        padding: 0;
+        margin-top: 1rem;
+
+        h3 {
+            width: 19rem;
+            font-size: 1.6rem;
+        }
+
+        p {
+            width: 19rem;
+            font-size: 1.05rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    .product-image img {
+        width: 17rem;
+    }
+
+    .choose-us {
+        padding-top: 3rem;
+        height: 70rem;
+        justify-content: flex-start;
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6rem;
+        }
+    }
+
+    .choose-us-benefits {
+        position: absolute;
+        margin-top: 22rem;
+    }
+
+    .choose-us-text {
+        color: white;
+        text-align: center;
+        padding: 4rem 0 7rem 0;
+        width: 23rem;
+    }
+
+    .benefit {
+        padding: 0;
+        flex-direction: column;
+        height: 26rem;
+        gap: 3rem;
+        width: 75%;
+
+        img {
+            width: 6rem;
+            margin-top: 2rem;
+        }
+    }
+
+    .benefit-text {
+        padding: 0 1.5rem;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+
+        h3 {
+            font-size: 1.7rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+    }
+
+    .how-it-works {
+        margin-top: 50rem;
+        justify-content: space-between;
+
+        h2 {
+            font-size: 1.7rem;
+            text-align: center;
+        }
+    }
+
+    .steps-illustration {
+        display: none;
+    }
+
+    .steps {
+        flex-direction: column;
+        text-align: center;
+        gap: 9rem;
+    }
+
+    .step1,
+    .step2,
+    .step3 {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .step-title {
+        width: 25rem;
+        font-size: 1.8rem;
+        margin-top: 1rem;
+    }
+
+    .step-description {
+        margin-top: 2.5rem;
+        font-size: 1.05rem;
+        line-height: 1.7rem;
+        width: 25rem;
+    }
+
+    .create-plan-btn {
+        button {
+            margin: 6rem 0 10rem 0;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .great-coffee-text {
+        h2 {
+            font-size: 2.4rem;
+            width: 16rem;
+        }
+
+        p {
+            width: 14rem;
+            font-size: 0.9rem;
+        }
+
+        button {
+            padding: 1rem;
+            font-size: 1.1rem;
+            width: 12rem;
+        }
+    }
+
+    .title-gradient {
+        width: 20rem;
+        height: 12vw;
+        margin-top: -4rem;
+    }
+
+    .products {
+        width: 100%;
+    }
+
+    .product-description {
+        gap: 1rem;
+        width: 14rem;
+
+        h3 {
+            width: 14rem;
+            font-size: 1.3rem;
+        }
+
+        p {
+            width: 14rem;
+            font-size: 0.9rem;
+            line-height: 1.3rem;
+        }
+    }
+
+    .product-image img {
+        width: 12rem;
+    }
+
+    .choose-us {
+        padding-top: 0;
+        height: 55rem;
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.3rem;
+        }
+    }
+
+    .choose-us-benefits {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20 0 0 0;
+    }
+
+    .choose-us-text {
+        width: 18rem;
+        padding-bottom: 0;
+    }
+
+    .benefit {
+        height: 23rem;
+        max-width: 16rem;
+
+        img {
+            width: 5rem;
+            margin-top: 1rem;
+        }
+    }
+
+    .benefit-text {
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    }
+
+    .steps {
+        gap: 4rem;
+    }
+
+    .step-number {
+        font-size: 4rem;
+    }
+
+    .step-title {
+        width: 15rem;
+        font-size: 1.4rem;
+    }
+
+    .step-description {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+        width: 15rem;
+    }
+
+    .create-plan-btn {
+        button {
+            padding: 1rem 1.3rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 395px) {
+    .great-coffee-text {
+        h2 {
+            font-size: 1.8rem;
+            width: 12rem;
+        }
+
+        p {
+            width: 12rem;
+            font-size: 0.9rem;
+        }
+
+        button {
+            padding: 1rem;
+            font-size: 1.1rem;
+            width: 12rem;
+        }
+    }
+
+    .choose-us-text {
+        font-size: 0.85rem;
+        width: 12rem;
+    }
+
+    .title-gradient {
+        width: 16rem;
+        height: 12vw;
+        margin-top: -4rem;
+    }
+
+    .collection {
+        h1 {
+            font-size: 2.1rem;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .benefit {
+        height: 20rem;
+        img {
+            width: 4rem;
+            margin-top: 0;
+        }
+    }
+
+    .benefit-text {
+        max-width: 14rem;
+
+        h3 {
+            flex-wrap: wrap;
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
     }
 }
