@@ -1,11 +1,10 @@
-const choice = document.getElementsByClassName("choice");
-const qMap =
-    document.getElementsByClassName("question-map");
-const summary = document.querySelector(".summary");
+const choice = document.querySelectorAll(".choice");
+const preview = document.querySelector(".order-preview");
 const modal = document.querySelector(".modal");
 const overlay = document.getElementById("overlay");
 
 const initialSentence = `Customize your plan with the <span class="custom">above</span> options then come back to review and confirm.`;
+
 const summarySentence = `“I drink my coffee <span
 id="using-as"></span> <span class="custom" id="how">. . . </span>, with a <span class="custom" 
 id="type">. . . </span> type of bean. <span class="custom" id="quantity">. . . </span> 
@@ -24,7 +23,7 @@ const plan = {
     ]
 };
 
-summary.children[1].innerHTML = initialSentence;
+preview.children[1].innerHTML = initialSentence;
 
 const sentenceModifier = function (option, value) {
     document.getElementById(option).textContent = value;
@@ -56,6 +55,16 @@ const weekly = document.getElementById("weekly");
 const twoWeeks = document.getElementById("two-weeks");
 const monthly = document.getElementById("monthly");
 
+const clearFrequency = () => {
+    [weekly, twoWeeks, monthly].forEach((frequency) => {
+        frequency.classList.remove("answer--active");
+    });
+    deliveries = false;
+};
+
+// CHOICE OPENER
+const qMap = document.querySelectorAll(".question-map");
+
 // Bottom Button Logic
 let preferences = false;
 let bean = false;
@@ -67,10 +76,10 @@ let capsuleCheck = false;
 const checkPlan = function () {
     if (capsuleCheck && bean && quantities && deliveries) {
         document
-            .getElementById("finish-order")
-            .classList.remove("finish-order-disabled");
+            .getElementById("confirm")
+            .classList.remove("disabled");
         document
-            .getElementById("finish-order")
+            .getElementById("confirm")
             .addEventListener("click", getOrder);
     } else if (
         preferences &&
@@ -80,15 +89,15 @@ const checkPlan = function () {
         deliveries
     ) {
         document
-            .getElementById("finish-order")
-            .classList.remove("finish-order-disabled");
+            .getElementById("confirm")
+            .classList.remove("disabled");
         document
-            .getElementById("finish-order")
+            .getElementById("confirm")
             .addEventListener("click", getOrder);
     } else {
         document
-            .getElementById("finish-order")
-            .classList.add("finish-order-disabled");
+            .getElementById("confirm")
+            .classList.add("disabled");
     }
 };
 
@@ -97,106 +106,65 @@ const checkDelivery = () => {
         (capsuleCheck && bean && quantities) ||
         (preferences && bean && quantities && grinds)
     ) {
-        choice[4].classList.remove("choice-disabled");
-        choice[4].children[0].classList.remove(
-            "question-disabled",
-            "arrow-wrap-disabled"
-        );
-        qMap[4].classList.remove("question-map-disabled");
-        choice[4].children[0].addEventListener(
-            "click",
-            () => {
-                choice[4].children[0].classList.toggle(
-                    "arrow-wrap-selected"
-                );
-                choice[4].children[1].classList.toggle(
-                    "answers-open"
-                );
-                choice[4].scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
-        );
-        qMap[4].addEventListener("click", () => {
-            choice[4].children[0].classList.add(
-                "arrow-wrap-selected"
-            );
-            choice[4].children[1].classList.add(
-                "answers-open"
-            );
-            choice[4].scrollIntoView({
-                behavior: "smooth"
-            });
-        });
+        if (
+            choice[4].classList.contains("choice--disabled")
+        ) {
+            choice[4].classList.remove("choice--disabled");
+        }
     }
 };
 
 // CHOICE OPENER
 for (let i = 0; i < choice.length; i++) {
-    if (
-        !choice[i].children[0].classList.contains(
-            "question-disabled"
-        )
-    ) {
-        choice[i].children[0].addEventListener(
-            "click",
-            () => {
-                choice[i].children[0].classList.toggle(
-                    "arrow-wrap-selected"
-                );
-                choice[i].children[1].classList.toggle(
-                    "answers-open"
-                );
-                if (
-                    !choice[
-                        i
-                    ].children[0].classList.contains(
-                        "question-disabled"
-                    )
-                ) {
-                    choice[i].scrollIntoView({
-                        behavior: "smooth"
-                    });
-                }
-                if (
-                    summary.children[1].innerHTML ===
-                    initialSentence
-                ) {
-                    summary.children[1].innerHTML =
-                        summarySentence;
-                }
-            }
+    choice[i].children[0].addEventListener("click", () => {
+        choice[i].children[0].classList.toggle(
+            "question--open"
         );
-        qMap[i].addEventListener("click", () => {
-            qMap[i].classList.add("question-map-onclick");
-            setTimeout(() => {
-                qMap[i].classList.remove(
-                    "question-map-onclick"
-                );
-            }, 1500);
-            choice[i].children[0].classList.add(
-                "arrow-wrap-selected"
-            );
-            choice[i].children[1].classList.add(
-                "answers-open"
-            );
-            choice[i].scrollIntoView({
-                behavior: "smooth"
-            });
-            if (
-                summary.children[1].innerHTML ===
-                initialSentence
-            ) {
-                summary.children[1].innerHTML =
-                    summarySentence;
-            }
+
+        choice[i].children[1].classList.toggle(
+            "answers--open"
+        );
+
+        choice[i].scrollIntoView({
+            behavior: "smooth"
         });
-    }
+
+        if (
+            preview.children[1].innerHTML ===
+            initialSentence
+        ) {
+            preview.children[1].innerHTML = summarySentence;
+        }
+    });
+    qMap[i].addEventListener("click", () => {
+        qMap[i].classList.add("question-map--active");
+        setTimeout(() => {
+            qMap[i].classList.remove(
+                "question-map--active"
+            );
+        }, 1500);
+        choice[i].children[0].classList.add(
+            "question--open"
+        );
+        choice[i].children[1].classList.add(
+            "answers--open"
+        );
+        choice[i].scrollIntoView({
+            behavior: "smooth"
+        });
+        if (
+            preview.children[1].innerHTML ===
+            initialSentence
+        ) {
+            preview.children[1].innerHTML = summarySentence;
+        }
+    });
 }
 
 // SHIPMENT PRICE UPDATER
 let multiply = 0;
 let finalPrice = 0;
+
 const weeklyPrice = document.getElementById("weekly-price");
 const biweeklyPrice = document.getElementById(
     "biweekly-price"
@@ -236,21 +204,21 @@ capsule.addEventListener("click", () => {
     ).textContent = "";
     document.getElementById("grind").textContent = "";
     sentenceModifier(`how`, plan.how[0]);
-    filter.classList.remove("answer-active");
-    espresso.classList.remove("answer-active");
-    capsule.classList.add("answer-active");
-    wholebean.classList.remove("answer-active");
-    grindFilter.classList.remove("answer-active");
-    cafetiere.classList.remove("answer-active");
-    choice[3].classList.add("choice-disabled");
-    choice[3].children[0].classList.add(
-        "question-disabled",
-        "arrow-wrap-disabled"
+    filter.classList.remove("answer--active");
+    espresso.classList.remove("answer--active");
+    capsule.classList.add("answer--active");
+    wholebean.classList.remove("answer--active");
+    grindFilter.classList.remove("answer--active");
+    cafetiere.classList.remove("answer--active");
+    choice[3].classList.add("choice--disabled");
+    choice[3].classList.add("question--disabled");
+    choice[3].children[0].classList.remove(
+        "question--open"
     );
-    choice[3].children[1].classList.add("answers-closed");
-    qMap[0].classList.add("question-map-checked");
-    qMap[3].classList.add("question-map-disabled");
-    qMap[3].classList.remove("question-map-checked");
+    choice[3].children[1].classList.remove("answers--open");
+    qMap[0].classList.add("question-map--checked");
+    qMap[3].classList.add("question-map--disabled");
+    qMap[3].classList.remove("question-map--checked");
     document.getElementById("using-as").textContent =
         "using";
 });
@@ -268,19 +236,15 @@ filter.addEventListener("click", () => {
     ).textContent = "ground ala ";
     document.getElementById("grind").textContent = ". . . ";
     sentenceModifier(`how`, plan.how[1]);
-    filter.classList.add("answer-active");
-    espresso.classList.remove("answer-active");
-    capsule.classList.remove("answer-active");
-    choice[3].classList.remove("choice-disabled");
+    filter.classList.add("answer--active");
+    espresso.classList.remove("answer--active");
+    capsule.classList.remove("answer--active");
+    choice[3].classList.remove("choice--disabled");
     choice[3].children[0].classList.remove(
-        "question-disabled",
-        "arrow-wrap-disabled"
+        "question--disabled"
     );
-    choice[3].children[1].classList.remove(
-        "answers-closed"
-    );
-    qMap[0].classList.add("question-map-checked");
-    qMap[3].classList.remove("question-map-disabled");
+    qMap[0].classList.add("question-map--checked");
+    qMap[3].classList.remove("question-map--disabled");
 });
 
 espresso.addEventListener("click", () => {
@@ -296,19 +260,16 @@ espresso.addEventListener("click", () => {
     ).textContent = "ground ala ";
     document.getElementById("grind").textContent = ". . . ";
     sentenceModifier(`how`, plan.how[2]);
-    espresso.classList.add("answer-active");
-    filter.classList.remove("answer-active");
-    capsule.classList.remove("answer-active");
-    choice[3].classList.remove("choice-disabled");
+    espresso.classList.add("answer--active");
+    filter.classList.remove("answer--active");
+    capsule.classList.remove("answer--active");
+    choice[3].classList.remove("choice--disabled");
     choice[3].children[0].classList.remove(
-        "question-disabled",
-        "arrow-wrap-disabled"
+        "question--disabled"
     );
-    choice[3].children[1].classList.remove(
-        "answers-closed"
-    );
-    qMap[0].classList.add("question-map-checked");
-    qMap[3].classList.remove("question-map-disabled");
+    choice[3].children[1].classList.remove("answers--open");
+    qMap[0].classList.add("question-map--checked");
+    qMap[3].classList.remove("question-map--disabled");
 });
 
 // TYPE
@@ -317,10 +278,10 @@ origin.addEventListener("click", () => {
     checkDelivery();
     checkPlan();
     sentenceModifier("type", plan.type[0]);
-    origin.classList.add("answer-active");
-    decaf.classList.remove("answer-active");
-    blended.classList.remove("answer-active");
-    qMap[1].classList.add("question-map-checked");
+    origin.classList.add("answer--active");
+    decaf.classList.remove("answer--active");
+    blended.classList.remove("answer--active");
+    qMap[1].classList.add("question-map--checked");
 });
 
 decaf.addEventListener("click", () => {
@@ -328,10 +289,10 @@ decaf.addEventListener("click", () => {
     checkDelivery();
     checkPlan();
     sentenceModifier("type", plan.type[1]);
-    origin.classList.remove("answer-active");
-    decaf.classList.add("answer-active");
-    blended.classList.remove("answer-active");
-    qMap[1].classList.add("question-map-checked");
+    origin.classList.remove("answer--active");
+    decaf.classList.add("answer--active");
+    blended.classList.remove("answer--active");
+    qMap[1].classList.add("question-map--checked");
 });
 
 blended.addEventListener("click", () => {
@@ -339,10 +300,10 @@ blended.addEventListener("click", () => {
     checkDelivery();
     checkPlan();
     sentenceModifier("type", plan.type[2]);
-    origin.classList.remove("answer-active");
-    decaf.classList.remove("answer-active");
-    blended.classList.add("answer-active");
-    qMap[1].classList.add("question-map-checked");
+    origin.classList.remove("answer--active");
+    decaf.classList.remove("answer--active");
+    blended.classList.add("answer--active");
+    qMap[1].classList.add("question-map--checked");
 });
 
 // QUANTITY
@@ -352,10 +313,10 @@ small.addEventListener("click", () => {
     checkDelivery();
     checkPlan();
     sentenceModifier("quantity", plan.quantity[0]);
-    small.classList.add("answer-active");
-    medium.classList.remove("answer-active");
-    large.classList.remove("answer-active");
-    qMap[2].classList.add("question-map-checked");
+    small.classList.add("answer--active");
+    medium.classList.remove("answer--active");
+    large.classList.remove("answer--active");
+    qMap[2].classList.add("question-map--checked");
 });
 
 medium.addEventListener("click", () => {
@@ -364,10 +325,10 @@ medium.addEventListener("click", () => {
     checkDelivery();
     checkPlan();
     sentenceModifier("quantity", plan.quantity[1]);
-    small.classList.remove("answer-active");
-    medium.classList.add("answer-active");
-    large.classList.remove("answer-active");
-    qMap[2].classList.add("question-map-checked");
+    small.classList.remove("answer--active");
+    medium.classList.add("answer--active");
+    large.classList.remove("answer--active");
+    qMap[2].classList.add("question-map--checked");
 });
 
 large.addEventListener("click", () => {
@@ -376,10 +337,10 @@ large.addEventListener("click", () => {
     checkDelivery();
     checkPlan();
     sentenceModifier("quantity", plan.quantity[2]);
-    small.classList.remove("answer-active");
-    medium.classList.remove("answer-active");
-    large.classList.add("answer-active");
-    qMap[2].classList.add("question-map-checked");
+    small.classList.remove("answer--active");
+    medium.classList.remove("answer--active");
+    large.classList.add("answer--active");
+    qMap[2].classList.add("question-map--checked");
 });
 
 // GRIND?
@@ -388,10 +349,10 @@ wholebean.addEventListener("click", () => {
     checkDelivery();
     checkPlan();
     sentenceModifier("grind", plan.grind[0]);
-    wholebean.classList.add("answer-active");
-    grindFilter.classList.remove("answer-active");
-    cafetiere.classList.remove("answer-active");
-    qMap[3].classList.add("question-map-checked");
+    wholebean.classList.add("answer--active");
+    grindFilter.classList.remove("answer--active");
+    cafetiere.classList.remove("answer--active");
+    qMap[3].classList.add("question-map--checked");
 });
 
 grindFilter.addEventListener("click", () => {
@@ -399,10 +360,10 @@ grindFilter.addEventListener("click", () => {
     checkDelivery();
     checkPlan();
     sentenceModifier("grind", plan.grind[1]);
-    wholebean.classList.remove("answer-active");
-    grindFilter.classList.add("answer-active");
-    cafetiere.classList.remove("answer-active");
-    qMap[3].classList.add("question-map-checked");
+    wholebean.classList.remove("answer--active");
+    grindFilter.classList.add("answer--active");
+    cafetiere.classList.remove("answer--active");
+    qMap[3].classList.add("question-map--checked");
 });
 
 cafetiere.addEventListener("click", () => {
@@ -410,10 +371,10 @@ cafetiere.addEventListener("click", () => {
     checkDelivery();
     checkPlan();
     sentenceModifier("grind", plan.grind[2]);
-    wholebean.classList.remove("answer-active");
-    grindFilter.classList.remove("answer-active");
-    cafetiere.classList.add("answer-active");
-    qMap[3].classList.add("question-map-checked");
+    wholebean.classList.remove("answer--active");
+    grindFilter.classList.remove("answer--active");
+    cafetiere.classList.add("answer--active");
+    qMap[3].classList.add("question-map--checked");
 });
 
 // FREQUENCY
@@ -421,10 +382,10 @@ weekly.addEventListener("click", () => {
     deliveries = true;
     checkPlan();
     sentenceModifier("frequency", plan.frequency[0]);
-    weekly.classList.add("answer-active");
-    twoWeeks.classList.remove("answer-active");
-    monthly.classList.remove("answer-active");
-    qMap[4].classList.add("question-map-checked");
+    weekly.classList.add("answer--active");
+    twoWeeks.classList.remove("answer--active");
+    monthly.classList.remove("answer--active");
+    qMap[4].classList.add("question-map--checked");
     finalPrice = parseFloat(weeklyPrice.textContent);
     multiply = 4;
 });
@@ -433,10 +394,10 @@ twoWeeks.addEventListener("click", () => {
     deliveries = true;
     checkPlan();
     sentenceModifier("frequency", plan.frequency[1]);
-    weekly.classList.remove("answer-active");
-    twoWeeks.classList.add("answer-active");
-    monthly.classList.remove("answer-active");
-    qMap[4].classList.add("question-map-checked");
+    weekly.classList.remove("answer--active");
+    twoWeeks.classList.add("answer--active");
+    monthly.classList.remove("answer--active");
+    qMap[4].classList.add("question-map--checked");
     finalPrice = parseFloat(biweeklyPrice.textContent);
     multiply = 2;
 });
@@ -445,28 +406,21 @@ monthly.addEventListener("click", () => {
     deliveries = true;
     checkPlan();
     sentenceModifier("frequency", plan.frequency[2]);
-    weekly.classList.remove("answer-active");
-    twoWeeks.classList.remove("answer-active");
-    monthly.classList.add("answer-active");
-    qMap[4].classList.add("question-map-checked");
+    weekly.classList.remove("answer--active");
+    twoWeeks.classList.remove("answer--active");
+    monthly.classList.add("answer--active");
+    qMap[4].classList.add("question-map--checked");
     finalPrice = parseFloat(monthlyPrice.textContent);
     multiply = 1;
 });
-
-const clearFrequency = () => {
-    [weekly, twoWeeks, monthly].forEach((frequency) => {
-        frequency.classList.remove("answer-active");
-    });
-    deliveries = false;
-};
 
 // CHECKOUT
 const getOrder = () => {
     console.log(weeklyPrice.textContent);
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
-    document.getElementById("modal-order").innerHTML =
-        summary.children[1].innerHTML;
+    document.getElementById("modal-summary").innerHTML =
+        preview.children[1].innerHTML;
     document.getElementById("checkout-price").textContent =
         finalPrice * multiply;
     overlay.addEventListener("click", () => {
@@ -480,13 +434,3 @@ const getOrder = () => {
             overlay.classList.add("hidden");
         });
 };
-
-let openMenu = false;
-
-document
-    .querySelector("#hamburger-icon")
-    .addEventListener("click", () => {
-        document
-            .querySelector(".modal-menu")
-            .classList.remove("hidden");
-    });

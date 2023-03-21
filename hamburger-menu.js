@@ -1,23 +1,24 @@
+//what did I learn: mobile first, position: sticky and absolute, filter for icons hover,
+//z-index, tags organization
+
 let isOpen = false;
-document
-    .querySelector("#hamburger-icon")
-    .addEventListener("click", () => {
-        if (!isOpen) {
-            document
-                .querySelector(".modal-menu")
-                .classList.remove("hidden");
+const hamburger = document.querySelector(".hamburger-menu");
 
-            document.querySelector("#hamburger-icon").src =
-                "../assets/shared/mobile/icon-close.svg";
+hamburger.addEventListener("click", () => {
+    console.log(hamburger.children[0]);
+    document
+        .querySelector(".modal-menu")
+        .classList.toggle("hidden");
 
-            isOpen = true;
-        } else {
-            document
-                .querySelector(".modal-menu")
-                .classList.add("hidden");
-            document.querySelector("#hamburger-icon").src =
-                "../assets/shared/mobile/icon-hamburger.svg";
+    if (!isOpen) {
+        hamburger.children[0].src =
+            "./assets/shared/mobile/icon-close.svg";
 
-            isOpen = false;
-        }
-    });
+        isOpen = true;
+    } else {
+        hamburger.children[0].src =
+            "./assets/shared/mobile/icon-hamburger.svg";
+
+        isOpen = false;
+    }
+});
