@@ -19,7 +19,7 @@ Coffee Rosters Landing Page, a 3-page site with an interactive subscription sect
 <p>In hindsight, I can see how not using a framework would make this multi-page websites difficult to maintain and update. That's why I'm now focusing on learning React JS.</p>
 <br>
 <h2>:mag: Links</h2>
-<li><a href="https://maricastroc-coffeeroasters-page.netlify.app/ target="_blank">Preview Site</a></li>
+<li><a href="https://maricastroc-coffeeroasters-page.netlify.app/" target="_blank">Preview Site</a></li>
 <br/>
 <h2>:computer: My Process</h2>
 <h3>Built with:</h3>
