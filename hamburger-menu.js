@@ -12,12 +12,12 @@ hamburger.addEventListener("click", () => {
 
     if (!isOpen) {
         hamburger.children[0].src =
-            "./assets/shared/mobile/icon-close.svg";
+            "../assets/shared/mobile/icon-close.svg";
 
         isOpen = true;
     } else {
         hamburger.children[0].src =
-            "./assets/shared/mobile/icon-hamburger.svg";
+            "../assets/shared/mobile/icon-hamburger.svg";
 
         isOpen = false;
     }
