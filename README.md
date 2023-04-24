@@ -3,7 +3,7 @@ Coffee Rosters Landing Page, a 3-page site with an interactive subscription sect
 
 <br/>
 <h2>:books: Project Description</h2>
-<p>This is a solution to the challenge <a href="https://www.frontendmentor.io/challenges/galleria-slideshow-site-tEA4pwsa6" target="_blank">Galleria Slideshow Site</a>.
+<p>This is a solution to the challenge <a href="https://www.frontendmentor.io/challenges/coffeeroasters-subscription-site-5Fc26HVY6" target="_blank">Coffee Rosters Landing Page</a>.
 
 <p>With this application, users are be able to:
    <li>View the optimal layout for each page depending on their device's screen size</li>
