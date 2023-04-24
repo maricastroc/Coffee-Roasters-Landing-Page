@@ -254,6 +254,7 @@ footer a:hover {
   background-size: cover;
 }
 .card--great--coffee h1 {
+  color: #fefcf7;
   font-size: clamp(2.2rem, 10vw, 3.6rem);
   line-height: 1.2;
   margin: 2rem auto;
@@ -271,6 +272,12 @@ footer a:hover {
 .card--choose--us p {
   margin: 0 auto 4rem auto;
   max-width: 16rem;
+}
+.card--choose--us h2 {
+  color: #fefcf7;
+  font-size: 1.5rem;
+  font-family: "Fraunces", sans-serif;
+  text-align: center;
 }
 .card--option {
   padding: 1rem;
@@ -294,12 +301,14 @@ footer a:hover {
   margin-top: 45rem;
   position: relative;
 }
-.card--how h3 {
+.card--how h1 {
   color: #83888f;
   text-align: center;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 900;
   font-family: "Fraunces", sans-serif;
+  margin-bottom: 2rem;
+  margin-top: 0;
 }
 .card--how h2 {
   margin: auto;
@@ -310,18 +319,18 @@ footer a:hover {
   margin: 3rem 0;
 }
 .card--how--content h2 {
-  font-size: 1.6rem;
-  font-weight: 900;
-  line-height: 2rem;
-  color: #293039;
-  font-family: "Fraunces", sans-serif;
-  text-align: center;
-}
-.card--how--content h1 {
   font-size: 4rem;
   line-height: 6rem;
   margin: 2rem auto 0 auto;
   color: hsl(25, 94%, 86%);
+  font-family: "Fraunces", sans-serif;
+  text-align: center;
+}
+.card--how--content h3 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 2rem;
+  color: #293039;
   font-family: "Fraunces", sans-serif;
   text-align: center;
 }
@@ -491,7 +500,7 @@ footer a:hover {
     max-width: 35rem;
     background-color: hsl(179, 81%, 29%);
   }
-  .card--option h1 {
+  .card--option h2 {
     font-size: 1.5rem;
     text-align: left;
   }
@@ -506,7 +515,7 @@ footer a:hover {
   .card--how {
     margin: 10rem 6vw;
   }
-  .card--how h3 {
+  .card--how h1 {
     font-size: 1.5rem;
     text-align: left;
     margin-bottom: 2.2rem;
@@ -554,11 +563,11 @@ footer a:hover {
   .card--how--content {
     padding: 0.8em;
   }
-  .card--how--content h1 {
+  .card--how--content h2 {
     margin: 0;
     text-align: left;
   }
-  .card--how--content h2 {
+  .card--how--content h3 {
     text-align: left;
     max-width: 10rem;
     margin: 0;
@@ -610,8 +619,10 @@ footer a:hover {
     padding: 10rem 0 0 3rem;
     width: 80%;
   }
-  .card--how h3 {
+  .card--how h1 {
     margin: 0 0 4rem 0;
+    text-align: left;
+    align-self: center;
   }
   .card--how button {
     margin: 2em 0 0 0;
@@ -662,7 +673,7 @@ footer a:hover {
     gap: 1.6rem;
     flex-direction: row;
   }
-  .option__description h1 {
+  .option__description h2 {
     font-size: 1.2rem;
     text-align: center;
   }
