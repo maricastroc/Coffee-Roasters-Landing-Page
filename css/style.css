@@ -613,7 +613,7 @@ footer a:hover {
   }
   .card--option {
     flex-direction: column;
-    padding: 2.4rem;
+    padding: 2rem;
     margin: 1rem auto;
     display: flex;
   }
