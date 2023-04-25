@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: #f2f2f2;
+  background-color: #fefcf7;
 }
 
 .card {
@@ -300,15 +300,14 @@ footer a:hover {
 .card--how {
   margin-top: 45rem;
   position: relative;
-}
-.card--how h1 {
-  color: #83888f;
   text-align: center;
+}
+.card--how strong {
+  color: #83888f;
   font-size: 1.5rem;
   font-weight: 900;
   font-family: "Fraunces", sans-serif;
-  margin-bottom: 2rem;
-  margin-top: 0;
+  margin: 0 auto 2rem;
 }
 .card--how h2 {
   margin: auto;
@@ -364,8 +363,8 @@ footer a:hover {
   width: 100%;
   height: 100%;
   background: -moz-linear-gradient(0deg, rgba(254, 252, 247, 0.8044818269) 25%, rgba(254, 247, 247, 0) 100%);
-  background: -webkit-linear-gradient(0deg, rgba(242, 242, 242, 0.8044818269) 25%, rgba(254, 247, 247, 0) 100%);
-  background: linear-gradient(0deg, rgba(242, 242, 242, 0.8044818269) 25%, rgba(254, 247, 247, 0) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(254, 252, 247, 0.8044818269) 25%, rgba(254, 247, 247, 0) 100%);
+  background: linear-gradient(0deg, rgba(254, 252, 247, 0.8044818269) 25%, rgba(254, 247, 247, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f2f2f2",endColorstr="#f2f2f2",GradientType=1);
 }
 
@@ -513,12 +512,12 @@ footer a:hover {
     line-height: 1.5rem;
   }
   .card--how {
+    text-align: left;
     margin: 10rem 6vw;
   }
-  .card--how h1 {
+  .card--how strong {
     font-size: 1.5rem;
     text-align: left;
-    margin-bottom: 2.2rem;
   }
   .collection__title {
     top: 6.5rem;
@@ -555,6 +554,7 @@ footer a:hover {
     font-size: 0.95rem;
   }
   .steps-illustration {
+    margin-top: 2rem;
     display: block;
   }
   .how-cards {
@@ -619,14 +619,17 @@ footer a:hover {
     padding: 10rem 0 0 3rem;
     width: 80%;
   }
-  .card--how h1 {
-    margin: 0 0 4rem 0;
+  .card--how strong {
+    margin: 0;
     text-align: left;
     align-self: center;
   }
   .card--how button {
     margin: 2em 0 0 0;
     padding: 1em 3em;
+  }
+  .steps-illustration {
+    margin-top: 4rem;
   }
   .collection {
     width: 80%;
